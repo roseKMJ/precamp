@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>게임</title>
+    <link href="styles/game.css" rel="stylesheet" />
+
+    <script> //실무에서는 wordStart 말고 startWord
+        function startWord(){
+                // 1. 제시어 가져오기
+                const word = document.getElementById("word").innerText // 제시어인"코드캠프"가 가져와짐
+                const lastWord = word[word.length -1]  // "프" 마지막 글자를 가져오기 위해 
+
+                // 2. 내가쓴단어 가져오기
+                const myword = document.getElementById("myword").value // 내가쓴단어 (input에 있는값은 value)
+                const firstWord = myword[0] // "내가쓴단어의 첫글자"
+
+                //3.제시어랑 내가쓴단어 비교하기(비교하고 결과에 적용하기)
+                if(lastWord === firstWord){
+                    // 정답코드 작성하기(1.결과부분 변경 , 2.제시어 변경)
+                    document.getElementById("result").innerText = "정답입니다"
+                    document.getElementById("word").innerText = myword
+                    document.getElementById("myword").value = ""
+                    
+                } else {
+                    // 오답코드 작성하기(1.결과부분 변경)
+                    document.getElementById("result").innerText = "틀렸습니다"
+                    document.getElementById("myword").value = ""
+                }
+
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__header">
+            <span class="title">GAME</span> <span class="subtitle">TODAY CHOICE</span>
+        </div>
+        <div class="wrapper__word">
+            <div class="wrapper__word__header">
+                <div>
+                    <img src="images/word.png">
+                </div>
+
+                <div class="title">
+                    끝말잇기
+                </div>
+                <div class="word_title">
+                    제시어: <span id="word">코드캠프</span>
+                </div>
+            </div>
+            <div class="wrapper__word__body">
+                <input id="myword" class="textbox" type="text" placeholder="단어를 입력하세요." />
+                <button onclick="startWord()">검색</button>
+            </div>
+            <div id="result" class="wrapper__word__footer">
+                결과!
+            </div>
+        </div>
+        <div class="wrapper__lotto">
+            <div class="wrapper__word__header">
+                <div>
+                    <img src="images/lotto.png">
+                </div>
+                <div class="title">
+                    LOTTO
+                </div>
+                <div class="word_title">
+                버튼을 누르세요.
+                </div>
+            </div>
+            <div class="wrapper__lotto__body">
+                <span>3</span>
+                <span>5</span>
+                <span>10</span>
+                <span>24</span>
+                <span>30</span>
+                <span>34</span>
+            </div>
+            <div class="wrapper__word__footer">
+                <button class="wrapper__lotto__btn">Button</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- 자바스크립트 연습 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>돔(DOM) 조작하기</title> <!--document object model (dom)-->
+    <script>
+        function aaa(){
+            // alert("안녕하세요~~~~~")
+            document.getElementById("qqq").innerText = "반갑습니다"
+            // 문서에서 "qqq"라는 element(줄전체)가져오고 그 안의 텍스트를 = "반갑습니다"로 넣어라
+        }
+
+        function counter() {
+           const temp =  Number(document.getElementById("count").innerText) + 1 // 0 + 1  Number는 숫자형으로 만들어 주기 위함
+                //실무에서 temp 잠깐담아두는 변수명
+            document.getElementById("count").innerText = temp
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 클릭하기 버튼을 누르면 안녕하세요가 되도록 하기 -->
+    <div id="qqq">안녕하세요</div>
+    <button onclick="aaa()">클릭하기</button>
+
+
+    <!-- 클릭하기 버튼을 누르면 숫자가 하나씩 오르게 하기 -->
+    <div id="count">0</div>
+    <button onclick="counter()">숫자올리기!!!</button>
+
+
+    
+</body>
+</html>

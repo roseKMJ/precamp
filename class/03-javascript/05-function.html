@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>function</title>
+<script>
+
+    // function change {
+    const change=()=>{
+        const token = String(Math.floor(Math.random()*1000000)).padStart(6,"0")
+        document.getElementById("number").innerText = token
+    
+        let time = 180
+        setInterval(function(){
+            const minutes = Math.floor(time/60)
+            const seconds = time % 60
+            if (time >=0){
+                document.getElementById("count").innerText = minutes + ":" + seconds
+                time = time - 1
+            }
+        }, 1000)
+    }
+
+    // 앞에 const를 안써도 결과가 나오긴 나오지만 이것을 window에 있는 기능으로 써지는 것임.
+    // 자바스크립트상에서 쓰려면 const같은 변수선언을 해주고
+    // 나중에 여러 자바스크립트를 서로연동해서 함수를 써야할때는 
+    // 생략하고 window기능으로 불러오는 이런 기능을 쓸 수 도 있음.
+
+</script>
+
+</head>
+<body>
+<span id="number">000000</span>
+<button onclick="change()" >인증번호 전송</button>
+<div id="count">3:00</div>
+
+    
+
+</body>
+</html>

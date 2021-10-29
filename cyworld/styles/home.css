@@ -1,0 +1,71 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  /* 전체크기에 margin과 box-sizing 꼭 넣어야함 회사마다 디폴트값임*/
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  /* background-color: skyblue; */
+  /* 부모의 크기가 지정되지 않기때문에 색깔이 안보임 때문에 부모속성에 사이즈 넣기! */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 26px;
+}
+
+.wrapper__news {
+  /* background-color: pink; */
+}
+
+.news {
+  display: flex;
+}
+
+.title {
+  color: #55b2d4;
+  font-size: 13px;
+}
+
+.subtitle {
+  color: #000;
+  font-size: 8px;
+}
+
+.line {
+  border-top: 1px dotted #999999;
+  /* border-top: 1px dotted black;
+  margin-top: 12px;
+  margin-bottom: 12px; */
+}
+
+.news__body__text {
+  padding-top: 8px;
+  font-size: 11px;
+  color: #999;
+}
+
+.wrapper__video {
+  /* background-color: yellow; */
+}
+
+.video {
+  width: 464px;
+  height: 240px;
+  background-color: #c4c4c4;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}

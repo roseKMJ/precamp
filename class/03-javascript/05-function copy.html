@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>function</title>
+<script>
+
+    let isActive = false //스위치변수사용(isActive는 그냥 변수명)  스위치가 꺼져있을때 타이머가 돌아가게 (안쓰면 버튼누를때마다 계속 refresh됨)
+    const change=()=>{
+
+        if(isActive === false){
+            isActive = true
+
+            const token = String(Math.floor(Math.random()*1000000)).padStart(6,"0")
+            document.getElementById("number").innerText = token
+        
+            let time = 130
+            setInterval(function(){
+                const minutes = String(Math.floor(time/60)).padStart(2,"0")
+                const seconds = String(time % 60).padStart(2,"0")
+                if(time >=0){
+                    document.getElementById("count").innerText = minutes + ":" + seconds
+                    time = time - 1
+                }
+            },1000)
+
+        }
+    }
+
+
+</script>
+
+</head>
+<body>
+<span id="number">000000</span>
+<button onclick="change()" >인증번호 전송</button>
+<div id="count">10</div>
+
+    
+
+</body>
+</html>
